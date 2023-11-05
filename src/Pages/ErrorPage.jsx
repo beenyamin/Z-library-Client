@@ -1,9 +1,11 @@
-
+import ErrorImage from "../../public/404 Error-cuate.png"
 
 const ErrorPage = () => {
     return (
-        <div>
-            <h2>Error Do Not Fount This Route</h2>
+        <div className="my-24 ml-0 lg:ml-80 ">
+
+                <img src={ErrorImage} className="w-96 " alt="" />
+
         </div>
     );
 };

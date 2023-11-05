@@ -1,15 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Image from "../../public/FB_IMG_1683207138728.jpg"
 import navImage from "../../public/logo.webp"
+import { useTheme } from "../Hooks/useTheme";
+import { BiSun} from 'react-icons/bi';
+import { HiOutlineMoon} from 'react-icons/hi';
 
 
 
 const Navbar = () => {
 
+  const  {changeTheme , mode} = useTheme()
+
+
+
   return (
     <div>
 
-      <div className="navbar ">
+      <div className="navbar  ">
 
         <div className="navbar-start lg:hidden">
           <div className="dropdown">
@@ -70,7 +77,7 @@ const Navbar = () => {
 
         <div className="navbar-center">
 
-          <img src={navImage} className="w-28" alt="" />
+          <img src={navImage} className="w-28 mr-10 lg:mr-0" alt="" />
 
 
           <div className="  ml-48 hidden lg:block items-center gap-2">
@@ -121,13 +128,26 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <button className="btn btn-ghost btn-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-          </button>
 
+        <div className="">
+
+    <button onClick={changeTheme} className=" bg-sky-400 px-2 mr-1 lg:mr-3 py-2 rounded-full ">
+        
+    {mode === "dark" ?  <BiSun className="w-6 h-5  "></BiSun> :
+
+    <HiOutlineMoon className="w-6 text-white h-5">
+      </HiOutlineMoon>}</button>
+
+
+    </div>
 
 
           <div className="dropdown dropdown-end">
+
+           <Link to={'/login'}> <button className="btn btn-info btn-sm text-white">Login</button></Link>
+
+
+{/* 
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img src={Image} />
@@ -142,7 +162,9 @@ const Navbar = () => {
               </li>
 
               <li><a>Logout</a></li>
-            </ul>
+            </ul> */}
+
+
           </div>
 
 
