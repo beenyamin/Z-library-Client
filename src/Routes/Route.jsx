@@ -7,6 +7,8 @@ import AllBook from "../Pages/AllBook";
 import BorrowedBook from "../Pages/BorrowedBook";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoutes from "./PrivateRoutes";
+
 
 
 
@@ -22,8 +24,7 @@ const routes = createBrowserRouter ([
         },
         {
           path: '/addBook',
-          element:<AddBook></AddBook>
-
+          element:<PrivateRoutes><AddBook></AddBook></PrivateRoutes>
          
         },
         {
