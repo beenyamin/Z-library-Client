@@ -16,8 +16,7 @@ const Register = () => {
 
     const location = useLocation ();
     const navigate = useNavigate ();
-    console.log('location in the log in page ',location);
-
+  
 
     const handleRegister = e => {
         e.preventDefault();
@@ -163,6 +162,7 @@ const Register = () => {
                         <div className="text-center">
                             <h2 className="mb-3 font-medium">Or Register With..</h2>
                         </div>
+                        
                         <div className=" ml-4 lg:ml-10">
 
                             <Link> <button onClick={handleGoogleRegister} className=' btn btn-outline btn-info'>
