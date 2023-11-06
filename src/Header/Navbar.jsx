@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import Image from "../../public/FB_IMG_1683207138728.jpg"
 import navImage from "../../public/logo.webp"
 import { useTheme } from "../Hooks/useTheme";
 import { BiSun} from 'react-icons/bi';
@@ -10,8 +9,6 @@ import { HiOutlineMoon} from 'react-icons/hi';
 const Navbar = () => {
 
   const  {changeTheme , mode} = useTheme()
-
-
 
   return (
     <div>
@@ -63,9 +60,6 @@ const Navbar = () => {
               >
                 Borrowed Book
               </NavLink>
-
-
-
 
             </ul>
           </div>
@@ -133,10 +127,12 @@ const Navbar = () => {
 
     <button onClick={changeTheme} className=" bg-sky-400 px-2 mr-1 lg:mr-3 py-2 rounded-full ">
         
-    {mode === "dark" ?  <BiSun className="w-6 h-5  "></BiSun> :
+    { mode === "dark" ?  <BiSun className="w-6 h-5 "></BiSun> :
 
     <HiOutlineMoon className="w-6 text-white h-5">
-      </HiOutlineMoon>}</button>
+      </HiOutlineMoon> }
+      
+      </button> 
 
 
     </div>

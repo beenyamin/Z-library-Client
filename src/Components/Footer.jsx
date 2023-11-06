@@ -1,5 +1,5 @@
 
-import foImage from "../../../public/logo.webp"
+import foImage from "../../public/logo.webp"
 
 const Footer = () => {
     return (
