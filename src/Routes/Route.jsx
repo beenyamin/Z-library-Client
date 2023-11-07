@@ -8,6 +8,7 @@ import BorrowedBook from "../Pages/BorrowedBook";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdateBook from "../Pages/UpdateBook";
 
 
 
@@ -27,6 +28,14 @@ const routes = createBrowserRouter ([
           element:<PrivateRoutes><AddBook></AddBook></PrivateRoutes>
          
         },
+
+        {
+          path: '/updateBook',
+          element:<PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>
+         
+        },
+
+
         {
           path: '/allBooks',
           element:<AllBook></AllBook>

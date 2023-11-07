@@ -1,9 +1,11 @@
 
 
-const AddBook = () => {
+const UpdateBook = () => {
 
-    const handleAddProduct = e => {
 
+
+
+    const handleUpdateProduct = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -22,31 +24,36 @@ const AddBook = () => {
 
 
 
+
+
     return (
+
         <div className="bg-slate-300 rounded-md mt-14 mb-10 px-24 py-10 ml-3 lg:ml-0 ">
 
-        <h2 className="text-3xl text-center justify-center mb-3 font-extrabold ">Add Book</h2>
+        <h2 className="text-3xl text-center justify-center mb-3 font-extrabold ">Update Book</h2>
 
 
 
-        <form onSubmit={handleAddProduct}>
+        <form onSubmit={handleUpdateProduct}>
 
             <div className="grid grid-cols-1 lg:grid-cols-2">
 
                 {/* row 1 */}
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        <span className="label-text">Image</span>
+                        <span className="label-text">Book Image</span>
                     </label>
-                    <input type="text" name="image" placeholder="Image Url" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="image" placeholder=" Book Image " className="input input-bordered w-full max-w-xs" />
                 </div>
+
+                {/* defaultValue={authorName} */}
 
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name="name" placeholder="Book Name" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="name"  placeholder="Book Name"  className="input input-bordered w-full max-w-xs" />
                 </div>
 
                 {/* row 2 */}
@@ -54,7 +61,7 @@ const AddBook = () => {
                     <label className="label">
                         <span className="label-text">Author Name</span>
                     </label>
-                    <input type="text" name="authorName" placeholder="Author Name" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="authorName"  placeholder="Author Name"   className="input input-bordered w-full max-w-xs" />
                 </div>
 
 
@@ -62,9 +69,7 @@ const AddBook = () => {
                     <label className="label">
                         <span className="label-text">Category</span>
                     </label>
-                    <input type="text" name="category"
-                    placeholder="Category" 
-                    className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="category" placeholder="Category" className="input input-bordered w-full max-w-xs" />
                 </div>
 
 
@@ -94,13 +99,16 @@ const AddBook = () => {
 
             </div>
 
-            <input type="submit" value="Add Book"
+            <input type="submit" value="Update Book"
                 className="btn btn-info w-11/12 text-white  mt-4" />
         </form>
 
     </div>
 
+
+
+       
     );
 };
 
-export default AddBook;
+export default UpdateBook;
