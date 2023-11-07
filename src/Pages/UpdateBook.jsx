@@ -1,8 +1,14 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateBook = () => {
 
-
+    const book = useLoaderData();
+    const { _id, name, 
+        image, authorName, 
+        category, quantity,
+         description, rating } = book;
 
 
     const handleUpdateProduct = e => {
@@ -15,8 +21,38 @@ const UpdateBook = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const rating = form.rating.value;
-        const addProduct = { name, image, authorName, category, quantity, description, rating }
-        console.log(addProduct);
+        const updateBook = { name, image, authorName, category, quantity, description, rating }
+        console.log(updateBook);
+
+        
+        fetch(`http://localhost:5000/book/${_id}`, {
+
+        method: 'PUT',
+        headers: {
+
+            'content-type': 'application/json'
+        },
+
+        body: JSON.stringify(updateBook)
+
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            
+            if (data.modifiedCount> 0) {
+                Swal.fire({
+                    title: 'Success?',
+                    text: "Product Update SuccessFully",     
+                    icon: 'success',
+                    confirmButtonText: 'Yes, '
+                  })
+
+                
+            }
+        })
+
+
 
 
     }
@@ -43,17 +79,17 @@ const UpdateBook = () => {
                     <label className="label">
                         <span className="label-text">Book Image</span>
                     </label>
-                    <input type="text" name="image" placeholder=" Book Image " className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="image"  defaultValue={image}  placeholder=" Book Image " className="input input-bordered w-full max-w-xs" />
                 </div>
 
-                {/* defaultValue={authorName} */}
+              
 
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name="name"  placeholder="Book Name"  className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="name"  defaultValue={name}  placeholder="Book Name"  className="input input-bordered w-full max-w-xs" />
                 </div>
 
                 {/* row 2 */}
@@ -61,7 +97,7 @@ const UpdateBook = () => {
                     <label className="label">
                         <span className="label-text">Author Name</span>
                     </label>
-                    <input type="text" name="authorName"  placeholder="Author Name"   className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="authorName"  defaultValue={authorName} placeholder="Author Name"   className="input input-bordered w-full max-w-xs" />
                 </div>
 
 
@@ -69,7 +105,7 @@ const UpdateBook = () => {
                     <label className="label">
                         <span className="label-text">Category</span>
                     </label>
-                    <input type="text" name="category" placeholder="Category" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="category"  defaultValue={category} placeholder="Category" className="input input-bordered w-full max-w-xs" />
                 </div>
 
 
@@ -79,7 +115,7 @@ const UpdateBook = () => {
                     <label className="label">
                         <span className="label-text">Quantity</span>
                     </label>
-                    <input type="text" name="quantity" placeholder="Quantity" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="quantity"  defaultValue={quantity} placeholder="Quantity" className="input input-bordered w-full max-w-xs" />
                 </div>
 
 
@@ -87,14 +123,14 @@ const UpdateBook = () => {
                     <label className="label">
                         <span className="label-text">Short Description</span>
                     </label>
-                    <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="description"  defaultValue={description} placeholder="Short Description" className="input input-bordered w-full max-w-xs" />
                 </div>
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Rating</span>
                     </label>
-                    <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="rating" defaultValue={rating} placeholder="Rating" className="input input-bordered w-full max-w-xs" />
                 </div>
 
             </div>

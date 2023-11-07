@@ -25,7 +25,7 @@ const BookCategory = () => {
                         <div className=" lg:pt-4 pt-3 pl-8 lg:pl-4 space-y-1  ">
                             <h2 className="text-2xl font font-semibold">Science</h2>
                             <p>"Science is the poetry of reality" <br />Richard Dawkins</p>
-                            <button className="px-2 py-1 bg-emerald-300 rounded-md ">Learn More</button>
+                            <button className="px-2 py-1 bg-emerald-300 rounded-md ">See Books</button>
 
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const BookCategory = () => {
                         <div className=" lg:pt-4 pt-3 pl-8 lg:pl-4 space-y-1  ">
                             <h2 className="text-2xl font font-semibold">History</h2>
                             <p>"Check The out history books here" </p>
-                            <button className="px-2 py-1 text-white bg-fuchsia-400  rounded-md ">Learn More</button>
+                            <button className="px-2 py-1 text-white bg-fuchsia-400  rounded-md ">See Books</button>
 
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const BookCategory = () => {
                         <div className=" lg:pt-4 pt-3 pl-8 lg:pl-4 space-y-1  ">
                             <h2 className="text-2xl font font-semibold">Novel</h2>
                             <p>"Check The out Novel books here" </p>
-                            <button className="px-2 py-1 text-black bg-red-400 rounded-md ">Learn More</button>
+                            <button className="px-2 py-1 text-black bg-red-400 rounded-md ">See Books</button>
 
                         </div>
                     </div>
@@ -84,7 +84,7 @@ const BookCategory = () => {
                         <div className=" lg:pt-4 pt-3 pl-8 lg:pl-4 space-y-1  ">
                             <h2 className="text-2xl font font-semibold">Comics</h2>
                             <p>Check out the history books here</p>
-                            <button className="px-2 py-1 text-black bg-yellow-200 rounded-md ">Learn More</button>
+                            <button className="px-2 py-1 text-black bg-yellow-200 rounded-md ">See Books</button>
 
                         </div>
                     </div>

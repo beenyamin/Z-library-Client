@@ -34,8 +34,11 @@ const routes = createBrowserRouter ([
         },
 
         {
-          path: '/updateBook',
-          element:<PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>
+          path: '/updateBook/:id',
+          element:<PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
+          loader:({params}) => fetch (`http://localhost:5000/book/${params.id}`)
+     
+
          
         },
 
@@ -64,22 +67,27 @@ const routes = createBrowserRouter ([
         },
         {
           path:'/science',
-          element:<Science></Science>
+          element:<Science></Science>,
+          loader:() => fetch ('http://localhost:5000/book')
+
 
         },
         {
           path:'/history',
-          element:<History></History>
+          element:<History></History>,
+          loader:() => fetch ('http://localhost:5000/book')
 
         },
         {
           path:'/novel',
-          element:<Novel></Novel>
+          element:<Novel></Novel>,
+          loader:() => fetch ('http://localhost:5000/book')
 
         },
         {
           path:'/comics',
-          element:<Comics></Comics>
+          element:<Comics></Comics>,
+          loader:() => fetch ('http://localhost:5000/book')
 
 
         },
