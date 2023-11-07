@@ -27,8 +27,8 @@ const BorrowCard = ({ book, books, setBooks }) => {
                         console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire(
-                                'Deleted!',
-                                'Item deleted SuccessFully',
+                                'Removed!',
+                                'Book Remove SuccessFully',
                                 'success'
                             )
                             const remaining = books.filter(product => product._id !== _id);
@@ -48,7 +48,7 @@ const BorrowCard = ({ book, books, setBooks }) => {
             <div  >
 
                 <div className="card w-10/12 ml-6 lg:ml-0 mt-10 lg:card-side bg-base-100 shadow-xl">
-                    <figure><img src={image} className="w-64 h-48" alt="Album" /></figure>
+                    <figure><img src={image} className="w-10/12 h-48" alt="Album" /></figure>
 
                     <div className="card-body mr-10 pr-5">
 
@@ -58,8 +58,8 @@ const BorrowCard = ({ book, books, setBooks }) => {
 
                         <div className="card-actions justify-end">
 
-                            <button onClick={() => handleDelete(_id)} className="btn-sm bg-indigo-600 text-white rounded-lg mr-3 ">Delete</button>
-                            <Link to={'/product'} > <button className="btn-sm bg-indigo-600 text-white rounded-lg mr-3">View</button> </Link>
+                            <button onClick={() => handleDelete(_id)} className="btn-sm bg-sky-400 text-white rounded-lg mr-3 ">Remove</button>
+                            <Link to={'/product'} > <button className="btn-sm bg-sky-400 text-white rounded-lg mr-3">Return</button> </Link>
 
                         </div>
                     </div>
