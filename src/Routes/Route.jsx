@@ -13,6 +13,7 @@ import Science from "../Components/AllCard/AllBookCard/Science/Science";
 import History from "../Components/AllCard/AllBookCard/History/History";
 import Novel from "../Components/AllCard/AllBookCard/Novel/Novel";
 import Comics from "../Components/AllCard/AllBookCard/Comics/Comics";
+import Details from "../Pages/Details";
 
 
 
@@ -37,8 +38,12 @@ const routes = createBrowserRouter ([
           path: '/updateBook/:id',
           element:<PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
           loader:({params}) => fetch (`http://localhost:5000/book/${params.id}`)
-     
-
+         
+        },
+        {
+          path: '/book/:id',
+          element:<PrivateRoutes><Details></Details></PrivateRoutes>,
+          loader:({params}) => fetch (`http://localhost:5000/book/${params.id}`)
          
         },
 
@@ -51,7 +56,9 @@ const routes = createBrowserRouter ([
         },
         {
           path: '/borrowedBooks',
-          element:<BorrowedBook></BorrowedBook>
+          element:<BorrowedBook></BorrowedBook>,
+          loader: () => fetch ('http://localhost:5000/borrowItem')
+
        
         },
         {
