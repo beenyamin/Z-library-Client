@@ -9,6 +9,10 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateBook from "../Pages/UpdateBook";
+import Science from "../Components/AllCard/AllBookCard/Science/Science";
+import History from "../Components/AllCard/AllBookCard/History/History";
+import Novel from "../Components/AllCard/AllBookCard/Novel/Novel";
+import Comics from "../Components/AllCard/AllBookCard/Comics/Comics";
 
 
 
@@ -38,7 +42,8 @@ const routes = createBrowserRouter ([
 
         {
           path: '/allBooks',
-          element:<AllBook></AllBook>
+          element:<AllBook></AllBook>,
+          loader:() => fetch ('http://localhost:5000/book')
         
         },
         {
@@ -58,19 +63,24 @@ const routes = createBrowserRouter ([
 
         },
         {
-          path:''
+          path:'/science',
+          element:<Science></Science>
 
         },
         {
-          path:''
+          path:'/history',
+          element:<History></History>
 
         },
         {
-          path:''
+          path:'/novel',
+          element:<Novel></Novel>
 
         },
         {
-          path:''
+          path:'/comics',
+          element:<Comics></Comics>
+
 
         },
 

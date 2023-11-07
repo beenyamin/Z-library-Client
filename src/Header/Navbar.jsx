@@ -96,7 +96,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? ' text-sky-400 font-bold' : ' font-bold text-black hover:text-pink-400 '
+                isActive ? ' text-sky-400 font-bold' : ' font-bold dark:text-white text-black hover:text-pink-400 '
               }
 
             >
@@ -106,7 +106,7 @@ const Navbar = () => {
             <NavLink
               to="/addBook"
               className={({ isActive }) =>
-                isActive ? 'text-sky-400 font-bold' : ' font-bold text-black hover:text-pink-400'
+                isActive ? 'text-sky-400 font-bold' : ' font-bold dark:text-white text-black hover:text-pink-400'
               }
             >
               Add Book
@@ -114,7 +114,7 @@ const Navbar = () => {
             <NavLink
               to="/allBooks"
               className={({ isActive }) =>
-                isActive ? 'text-sky-400 font-bold' : ' font-bold text-black hover:text-pink-400'
+                isActive ? 'text-sky-400 font-bold' : ' font-bold dark:text-white text-black hover:text-pink-400'
               }
             >
               All Books
@@ -124,7 +124,7 @@ const Navbar = () => {
             <NavLink
               to="/borrowedBooks"
               className={({ isActive }) =>
-                isActive ? 'text-sky-400 font-bold' : ' font-bold text-black hover:text-pink-400'
+                isActive ? 'text-sky-400 font-bold' : ' font-bold dark:text-white text-black hover:text-pink-400'
               }
             >
               Borrowed Book

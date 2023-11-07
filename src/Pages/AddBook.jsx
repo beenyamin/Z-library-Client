@@ -13,8 +13,24 @@ const AddBook = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const rating = form.rating.value;
-        const addProduct = { name, image, authorName, category, quantity, description, rating }
-        console.log(addProduct);
+        const addBook = { name, image, authorName, category, quantity, description, rating }
+        console.log(addBook);
+
+        fetch('http://localhost:5000/book', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+
+            body: JSON.stringify(addBook)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+
+            })
 
 
     }

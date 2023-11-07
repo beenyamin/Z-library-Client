@@ -16,7 +16,7 @@ const BookCategory = () => {
 
                 {/* Card 1 */}
 
-                <Link>
+                <Link to={'/science'}>
                     <div className='bg-fuchsia-400 shadow-xl  lg:h-36 lg:ml-5  flex justify-around text-white rounded-md '>
                         <div>
                             <img src={Science} className="lg:w-28 w-30 lg:h-28 h-36 ml-4 lg:ml-0  mt-4 border-white lg:border-4 rounded-md" alt="" />
@@ -37,7 +37,7 @@ const BookCategory = () => {
 
                 {/*card 2  */}
 
-                <Link>
+                <Link to={'/history'} >
                     <div className='bg-green-200 mt-5 lg:mt-0  shadow-xl lg:ml-5   lg:h-36 flex justify-around text-black rounded-md '>
                         <div>
                             <img src={History} className="lg:w-28 w-30 lg:h-28 h-36 ml-4 lg:ml-0  mt-4 border-white lg:border-4 rounded-md" alt="" />
@@ -56,7 +56,7 @@ const BookCategory = () => {
 
                 {/*card 3  */}
 
-                <Link>
+                <Link to={'/novel'} >
                     <div className='bg-yellow-200 mt-5 shadow-xl  lg:ml-5   lg:h-36 flex justify-around text-black rounded-md '>
                         <div>
                             <img src={Nobel} className="lg:w-28 w-30 lg:h-28 h-36 ml-4 lg:ml-0  mt-4 border-white lg:border-4 rounded-md" alt="" />
@@ -75,7 +75,7 @@ const BookCategory = () => {
 
                 {/*card 4  */}
 
-                <Link>
+                <Link to={'/comics'} >
                     <div className='bg-red-400 mt-5 shadow-xl lg:ml-5 lg:h-36 flex justify-around text-black rounded-md '>
                         <div>
                             <img src={Comics} className="lg:w-28 w-30 lg:h-28 h-36 ml-4 lg:ml-0  mt-4 border-white lg:border-4 rounded-md" alt="" />
