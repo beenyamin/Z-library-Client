@@ -66,13 +66,13 @@ const UpdateBook = () => {
 
         <div className="bg-slate-200 rounded-md mt-14 mb-10 px-24 py-10 ml-3 lg:ml-0 ">
 
-        <h2 className="text-3xl text-center justify-center mb-3 font-extrabold ">Update Book</h2>
+        <h2 className="text-3xl text-center dark:text-black justify-center mb-3 font-extrabold ">Update Book</h2>
 
 
 
         <form onSubmit={handleUpdateProduct}>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="grid grid-cols-1  dark:text-black lg:grid-cols-2">
 
                 {/* row 1 */}
                 <div className="form-control w-full max-w-xs">

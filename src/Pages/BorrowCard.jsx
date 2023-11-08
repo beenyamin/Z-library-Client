@@ -62,7 +62,7 @@ const BorrowCard = ({ book, books, setBooks }) => {
 
 <div className=" my-4 lg:ml-10 ">
 
-<div className="card lg:w-10/12 h-80 lg:h-80 card-side bg-base-100 shadow-xl">
+<div className="card   dark:text-black  lg:w-10/12 h-80 lg:h-80 card-side bg-base-100 shadow-xl">
   <figure><img className="lg:w-72 w-96 h-80 lg:h-80" src={image} alt="Movie"/></figure>
   <div className="card-body">
     <h2 className="card-title"> {name}</h2>
