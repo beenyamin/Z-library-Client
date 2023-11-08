@@ -25,7 +25,7 @@ const UpdateBook = () => {
         console.log(updateBook);
 
         
-        fetch(`http://localhost:5000/book/${_id}`, {
+        fetch(`https://assignment-11-server-rho-ashen.vercel.app/book/${_id}`, {
 
         method: 'PUT',
         headers: {

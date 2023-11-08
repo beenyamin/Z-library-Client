@@ -4,14 +4,13 @@ import Swal from "sweetalert2";
 const Details = () => {
 
     const book = useLoaderData();
-
     const { _id, name, image, authorName, category, quantity, description, rating } = book || {};
-
     const add = { id: _id, name, image, authorName, category, quantity, description, rating }
+
 
     const handelAddToBorrow = () => {
 
-        fetch('http://localhost:5000/borrowItem', {
+        fetch('https://assignment-11-server-rho-ashen.vercel.app/borrowItem', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -70,10 +69,6 @@ const Details = () => {
 
                          </div>
 
-
-                       
-
-                       
 
                         <hr />
 

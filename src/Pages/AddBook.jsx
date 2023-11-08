@@ -16,7 +16,7 @@ const AddBook = () => {
         const addBook = { name, image, authorName, category, quantity, description, rating }
         console.log(addBook);
 
-        fetch('http://localhost:5000/book', {
+        fetch('https://assignment-11-server-rho-ashen.vercel.app/book', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

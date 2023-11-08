@@ -37,13 +37,13 @@ const routes = createBrowserRouter ([
         {
           path: '/updateBook/:id',
           element:<PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
-          loader:({params}) => fetch (`http://localhost:5000/book/${params.id}`)
+          loader:({params}) => fetch (`https://assignment-11-server-rho-ashen.vercel.app/book/${params.id}`)
          
         },
         {
           path: '/book/:id',
           element:<PrivateRoutes><Details></Details></PrivateRoutes>,
-          loader:({params}) => fetch (`http://localhost:5000/book/${params.id}`)
+          loader:({params}) => fetch (`https://assignment-11-server-rho-ashen.vercel.app/book/${params.id}`)
          
         },
 
@@ -51,13 +51,13 @@ const routes = createBrowserRouter ([
         {
           path: '/allBooks',
           element:<AllBook></AllBook>,
-          loader:() => fetch ('http://localhost:5000/book')
+          loader:() => fetch ('https://assignment-11-server-rho-ashen.vercel.app/book')
         
         },
         {
           path: '/borrowedBooks',
-          element:<BorrowedBook></BorrowedBook>,
-          loader: () => fetch ('http://localhost:5000/borrowItem')
+          element:<PrivateRoutes><BorrowedBook></BorrowedBook></PrivateRoutes> ,
+          loader: () => fetch ('https://assignment-11-server-rho-ashen.vercel.app/borrowItem')
 
        
         },
@@ -75,26 +75,26 @@ const routes = createBrowserRouter ([
         {
           path:'/science',
           element:<Science></Science>,
-          loader:() => fetch ('http://localhost:5000/book')
+          loader:() => fetch ('https://assignment-11-server-rho-ashen.vercel.app/book')
 
 
         },
         {
           path:'/history',
           element:<History></History>,
-          loader:() => fetch ('http://localhost:5000/book')
+          loader:() => fetch ('https://assignment-11-server-rho-ashen.vercel.app/book')
 
         },
         {
           path:'/novel',
           element:<Novel></Novel>,
-          loader:() => fetch ('http://localhost:5000/book')
+          loader:() => fetch ('https://assignment-11-server-rho-ashen.vercel.app/book')
 
         },
         {
           path:'/comics',
           element:<Comics></Comics>,
-          loader:() => fetch ('http://localhost:5000/book')
+          loader:() => fetch ('https://assignment-11-server-rho-ashen.vercel.app/book')
 
 
         },

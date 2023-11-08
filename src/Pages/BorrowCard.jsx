@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const BorrowCard = ({ book, books, setBooks }) => {
 
-    const { _id, name, image, authorName, category, quantity, description, rating } = book;
+    const { _id, name, image, authorName, category, quantity, description, rating } = book;  
+    const [getBook , setGetBook] = useState ([]);
+    const {user} =useAuth ();
+    const url = (`https://assignment-11-server-rho-ashen.vercel.app/borrowItem?email=${user?.email}`)
+
+    useEffect( () => {
+        axios.get (url , { withCredentials:true })
+        .then (res => {
+           setGetBook(res.data);
+        })
+
+    },[url])
+
 
 
     const handleDelete = id => {
@@ -19,7 +34,7 @@ const BorrowCard = ({ book, books, setBooks }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/borrowItem/${id}`, {
+                fetch(`https://assignment-11-server-rho-ashen.vercel.app/borrowItem/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -45,32 +60,49 @@ const BorrowCard = ({ book, books, setBooks }) => {
     return (
         <div>
 
-            <div  >
+<div className=" my-4 lg:ml-10 ">
 
-                <div className="card w-10/12 ml-6 lg:ml-0 mt-10 lg:card-side bg-base-100 shadow-xl">
-                    <figure><img src={image} className="w-10/12 h-48" alt="Album" /></figure>
-
-                    <div className="card-body mr-10 pr-5">
-
-                        <h2 className="card-title">{name}</h2>
-                        <p> <span className="text-lg font-medium">Author : {authorName} </span> </p>
-                        <p><span className="text-lg font-medium"> Quantity : {quantity} </span></p>
-
-                        <div className="card-actions justify-end">
-
-                            <button onClick={() => handleDelete(_id)} className="btn-sm bg-sky-400 text-white rounded-lg mr-3 ">Remove</button>
-                            <Link to={'/product'} > <button className="btn-sm bg-sky-400 text-white rounded-lg mr-3">Return</button> </Link>
-
-                        </div>
-                    </div>
-                </div>
+<div className="card lg:w-10/12 h-80 lg:h-80 card-side bg-base-100 shadow-xl">
+  <figure><img className="lg:w-72 w-96 h-80 lg:h-80" src={image} alt="Movie"/></figure>
+  <div className="card-body">
+    <h2 className="card-title"> {name}</h2>
+    <p>By-{authorName}</p>
+    <p>Category: {category}</p>
+    <div className="rating">
+       <p className="mr-2"> {rating}</p>
+  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
+  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
+</div>
 
 
+    <div className="card-actions pt-3 justify-end">          
+        
+    <button onClick={() => handleDelete(_id)} className="btn-sm bg-sky-400 text-white rounded-lg mr-3 ">Remove</button>
+<Link to={'/allBooks'} > <button className="btn-sm bg-sky-400 text-white rounded-lg mr-3">Return</button> </Link>
+  
+           
+
+    </div>
+  </div>
+</div>
 
 
-            </div>
+
+
+
+
+
+
+
+    </div>
 
         </div>
+        
+
+
     );
 };
 

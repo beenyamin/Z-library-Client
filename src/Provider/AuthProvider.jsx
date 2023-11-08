@@ -1,6 +1,7 @@
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Config/firebase.config";
+import axios from "axios";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -42,8 +43,33 @@ const AuthProvider = ({children}) => {
 
   useEffect(() => {
     const unSubsCribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const LoggedUser = {email: userEmail};
+
       setUser(currentUser);
       setIsLoading(false);
+      if (currentUser) {
+
+        axios.post('https://assignment-11-server-rho-ashen.vercel.app/jwt', LoggedUser,
+         { withCredentials: true })
+        .then(res => {
+            console.log( 'token response',res.data);
+
+            })
+
+      } 
+      else{
+        axios.post('https://assignment-11-server-rho-ashen.vercel.app/logout',LoggedUser,{
+          withCredentials:true
+        })
+        .then(res => {
+          console.log( res.data);
+
+          })
+
+      }
+
+
     });
 
     return () => {
