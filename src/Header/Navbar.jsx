@@ -43,7 +43,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-sm btn-info text-white' : 'btn btn-ghost btn-sm'
+                  isActive ? 'btn btn-sm btn-info dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
                 }
 
               >
@@ -53,7 +53,7 @@ const Navbar = () => {
               <NavLink
                 to="/addBook"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-info btn-sm text-white' : 'btn btn-ghost btn-sm'
+                  isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Add Book
@@ -61,7 +61,7 @@ const Navbar = () => {
               <NavLink
                 to="/allBooks"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-info btn-sm text-white' : 'btn btn-ghost btn-sm'
+                  isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 All Books
@@ -71,7 +71,7 @@ const Navbar = () => {
               <NavLink
                 to="/borrowedBooks"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-info btn-sm text-white' : 'btn btn-ghost btn-sm'
+                  isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Borrowed Book

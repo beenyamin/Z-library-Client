@@ -2,7 +2,7 @@
 import BNimage from "../../public/Reading book-bro.png"
 const Banner = () => {
     return (
-        <div className=" mr-0 lg:mr-14">
+        <div className=" ml-3 mt-10 lg:mt-0 lg:mr-14">
 
             <div className="grid grid-cols-1 lg:grid-cols-2 ">
 

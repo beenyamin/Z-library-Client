@@ -62,21 +62,14 @@ const BorrowCard = ({ book, books, setBooks }) => {
 
 <div className=" my-4 lg:ml-10 ">
 
-<div className="card   dark:text-black  lg:w-10/12 h-80 lg:h-80 card-side bg-base-100 shadow-xl">
-  <figure><img className="lg:w-72 w-96 h-80 lg:h-80" src={image} alt="Movie"/></figure>
+<div className="card   dark:text-black  lg:w-10/12  lg:h-80 card-side bg-base-100 shadow-xl">
+  <figure><img className="lg:w-64 w-64 lg:h-80" src={image} alt="Movie"/></figure>
   <div className="card-body">
     <h2 className="card-title"> {name}</h2>
-    <p>By-{authorName}</p>
+    <p>Borrow : 2023-11-09 </p>
+    <p>Return :  2023-11-15 </p>
     <p>Category: {category}</p>
-    <div className="rating">
-       <p className="mr-2"> {rating}</p>
-  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
-  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-  <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
-</div>
-
+   
 
     <div className="card-actions pt-3 justify-end">          
         
